@@ -3200,7 +3200,7 @@ function(a,b,c){if(!Vd(b))throw Error(n(200));return Wd(null,a,b,!1,c)};Q.unmoun
     }));
   }
   const HUB = D.hub || { players: [], fdr: {}, fdrFull: {}, posConcede: {}, codeFi: {}, gws: [], gw: {} };
-  const HPLAYERS = HUB.players || [];
+  const HPLAYERS = (HUB.players || []).filter((p) => !p.gone);
   const GW_DONE = Math.max(1, (HUB.gw && HUB.gw.id || 1) - 1);
   const MINS_REG = Math.min(900, GW_DONE * 60);
   const MINS_SAMPLE = Math.min(200, GW_DONE * 30);
